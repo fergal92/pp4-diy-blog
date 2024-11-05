@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d=wedo8!#=r_3vkzn$7#v#+%ypa8vtv&y@1=0p5=ar4x_8)1-+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-fergal92-pp4diyblog-ib0ogpjczet.ws.codeinstitute-ide.net',
@@ -131,3 +131,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-fergal92-pp4diyblog-ib0ogpjczet.ws.codeinstitute-ide.net",
+    "https://*.herokuapp.com"
+]
