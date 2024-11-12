@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
+
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -93,3 +94,17 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+@login_required
+def submit_post(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.status = 'submitted'  # Default status for review
+            post.save()
+            return redirect('post_submission_success')  # Redirect to a success page
+    else:
+        form = PostForm()
+    return render(request, 'blog/submit_post.html', {'form': form})
