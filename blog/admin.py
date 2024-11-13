@@ -11,5 +11,9 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
+    def make_published(self, request, queryset):
+        queryset.update(status='published')
+    make_published.short_description = "Mark selected posts as Published"
+    
 # Register your models here.
 admin.site.register(Comment)

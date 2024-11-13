@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
-
+from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 # Create your views here.
 class PostList(generic.ListView):
@@ -97,14 +97,21 @@ def comment_delete(request, slug, comment_id):
 
 @login_required
 def submit_post(request):
-    if request.method == "POST":
-        form = PostForm(request.POST)
+    """
+    View for submitting a new blog post.
+    """
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
-            post.status = 'submitted'  # Default status for review
+            post.author = request.user  # Assign the current user as the author
             post.save()
-            return redirect('post_submission_success')  # Redirect to a success page
+            return redirect('home')  # Redirect back to the homepage after submission
     else:
         form = PostForm()
+
     return render(request, 'blog/submit_post.html', {'form': form})
+
+def blog_list(request):
+    posts = Post.objects.filter(status='published').order_by('-created_on')
+    return render(request, 'blog/blog_list.html', {'posts': posts})
