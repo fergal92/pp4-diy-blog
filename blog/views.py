@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
+from django.utils.text import slugify
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
@@ -102,10 +103,22 @@ def submit_post(request):
     """
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
+        
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user  # Assign the current user as the author
+            
+            # Auto-generate the slug if it's not provided
+            if not post.slug:
+                post.slug = slugify(post.title)
+                
+                # Ensure unique slug by checking if it already exists
+                while Post.objects.filter(slug=post.slug).exists():
+                    post.slug = f"{post.slug}-{Post.objects.filter(slug__startswith=post.slug).count() + 1}"
+                    
             post.save()
+            
+            messages.success(request, 'Your post has been successfully submitted and is awaiting approval.')
             return redirect('home')  # Redirect back to the homepage after submission
     else:
         form = PostForm()

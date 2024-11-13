@@ -23,6 +23,11 @@ class Post(models.Model):
     def __str__(self):
         return f"{self.title}"
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)  # auto-generate slug if not set
+        super().save(*args, **kwargs)  # call the original save method to save the instance
+        
 class Comment(models.Model):
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="comments")
