@@ -59,9 +59,9 @@
                     <li class="nav-item">
 	                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                    <div class="text-right mb-3">
-                        <a href="{% url 'submit_post' %}" class="btn btn-primary">Write a New Post</a>
-                    </div>
+                    <li class="nav-item">
+                        <a href="{% url 'submit_post' %}" class="nav-link">Write Blog Post</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
 	                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"

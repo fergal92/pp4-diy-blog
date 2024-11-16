@@ -125,6 +125,6 @@ def submit_post(request):
 
     return render(request, 'blog/submit_post.html', {'form': form})
 
-def blog_list(request):
-    posts = Post.objects.filter(status='published').order_by('-created_on')
-    return render(request, 'blog/blog_list.html', {'posts': posts})
+#def blog_list(request):
+    #posts = Post.objects.filter(status='published').order_by('-created_on')
+    #return render(request, 'blog/blog_list.html', {'posts': posts})
