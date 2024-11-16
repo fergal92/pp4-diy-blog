@@ -192,3 +192,35 @@ body {
 .approval {
     color: #E3A592; /* Softer peach-pink for approval */
 }
+
+/* Custom styling for Django messages */
+.alert {
+    background-color: white !important; /* Override default Bootstrap background */
+    color: #333;                       /* Set text color */
+    border: 1px solid #ccc;            /* Add a subtle border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    border-radius: 5px;                /* Optional: Rounded corners */
+}
+
+/* Add specific styles for different message tags if needed */
+.alert-success {
+    border-color: #28a745; /* Green border for success messages */
+}
+
+.alert-danger {
+    border-color: #dc3545; /* Red border for error messages */
+}
+
+.alert-info {
+    border-color: #17a2b8; /* Blue border for informational messages */
+}
+
+.alert-warning {
+    border-color: #ffc107; /* Yellow border for warning messages */
+}
+
+.navbar-text {
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+}

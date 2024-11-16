@@ -160,4 +160,3 @@ CSRF_TRUSTED_ORIGINS = [
     "https://8000-fergal92-pp4diyblog-ib0ogpjczet.ws.codeinstitute-ide.net",
     "https://*.herokuapp.com"
 ]
-

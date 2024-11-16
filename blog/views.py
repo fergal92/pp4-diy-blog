@@ -6,12 +6,15 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
+from django.core.exceptions import ValidationError
+from cloudinary.exceptions import Error
 
 # Create your views here.
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "blog/index.html"
-    paginate_by = 6
+    paginate_by = 3
+    
     
 def post_detail(request, slug):
     """
@@ -41,7 +44,7 @@ def post_detail(request, slug):
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
+                'Comment submitted!'
             )
         
     comment_form = CommentForm()
@@ -72,7 +75,7 @@ def comment_edit(request, slug, comment_id):
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
             comment.post = post
-            comment.approved = False
+            comment.approved = True
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
@@ -108,18 +111,20 @@ def submit_post(request):
             post = form.save(commit=False)
             post.author = request.user  # Assign the current user as the author
             
-            # Auto-generate the slug if it's not provided
-            if not post.slug:
-                post.slug = slugify(post.title)
+            try:
+                # Handle file upload and potential validation error
+                post.save()
                 
-                # Ensure unique slug by checking if it already exists
-                while Post.objects.filter(slug=post.slug).exists():
-                    post.slug = f"{post.slug}-{Post.objects.filter(slug__startswith=post.slug).count() + 1}"
-                    
-            post.save()
-            
-            messages.success(request, 'Your post has been successfully submitted and is awaiting approval.')
-            return redirect('home')  # Redirect back to the homepage after submission
+                messages.success(request, 'Your post has been successfully submitted and is awaiting approval.')
+                return redirect('home')
+            except Error as e:
+                # Handle Cloudinary-specific error
+                messages.error(request, f"File upload error: {e}")
+                return redirect('submit_post')  # Redirect back to the submission page
+            except ValidationError as e:
+                # Handle Django validation errors, if any
+                messages.error(request, f"Validation error: {e}")
+                return redirect('submit_post')  # Redirect back to the submission page
     else:
         form = PostForm()
 

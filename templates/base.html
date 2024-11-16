@@ -35,8 +35,9 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">DIY<span
-                        class="thin"> | blog</span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <span class="brand">DIY<span class="thin"> | blog</span></span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,27 +49,29 @@
                             href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link
-                        {% if request.path == about_url %}active{%endif%}"
-                        aria-current="page"
-                        href="{% url 'about' %}"
-                        >About</a
-                        >
+                        <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'about' %}">About</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-	                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                        <a href="{% url 'submit_post' %}" class="nav-link">Write Blog Post</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <span class="navbar-text me-3">Hi, {{ user.username }}</span>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'submit_post' %}" class="nav-link">Write Blog Post</a>
+                        <a class="nav-link btn btn-outline-danger btn-sm" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-	                    <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-		                    href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link btn btn-outline-primary btn-sm" href="{% url 'account_login' %}">Login</a>
                     </li>
                     <li class="nav-item">
-	                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link btn btn-outline-secondary btn-sm ms-2" href="{% url 'account_signup' %}">Sign Up</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -92,11 +95,7 @@
     </div>
 
     <main class="flex-shrink-0 main-bg">
-        {% if user.is_authenticated %}
-    <p class="text-end m-3">You are logged in as {{ user }}</p>
-    {% else %}
-    <p class="text-end m-3">You are not logged in</p>
-    {% endif %}
+
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
