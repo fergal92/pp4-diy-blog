@@ -70,9 +70,6 @@
                     <li class="nav-item">
 	                    <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    <div class="text-right mb-3">
-                        <p><a href="{% url 'login' %}" class="btn btn-primary">Log in to Write a Post</a></p>
-                    </div>
                     {% endif %}
                 </ul>
             </div>
