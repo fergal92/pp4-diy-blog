@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -160,3 +161,14 @@ CSRF_TRUSTED_ORIGINS = [
     "https://8000-fergal92-pp4diyblog-ib0ogpjczet.ws.codeinstitute-ide.net",
     "https://*.herokuapp.com"
 ]
+
+# Cloudinary Configuration
+cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME')
+api_key = os.getenv('CLOUDINARY_API_KEY')
+api_secret = os.getenv('CLOUDINARY_API_SECRET')
+
+cloudinary.config(
+    cloud_name=cloud_name,
+    api_key=api_key,
+    api_secret=api_secret
+)
