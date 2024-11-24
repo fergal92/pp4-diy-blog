@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -103,17 +104,22 @@ WSGI_APPLICATION = 'diyblog.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': "dfq35olrc",
+        'API_KEY': "345616881523786",
+        'API_SECRET': "nEqlb1ETyvGTIvY4D2zrRKBm-uo",
+    }
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'  # Avoid using Cloudinary for tests
+
+    
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -165,6 +171,6 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 # Cloudinary Configuration
-cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME')
-api_key = os.getenv('CLOUDINARY_API_KEY')
-api_secret = os.getenv('CLOUDINARY_API_SECRET')
+cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME',)
+api_key = os.getenv('CLOUDINARY_API_KEY',)
+api_secret = os.getenv('CLOUDINARY_API_SECRET',)
