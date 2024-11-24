@@ -112,11 +112,6 @@ DATABASES = {
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
-    CLOUDINARY_STORAGE = {
-        'CLOUD_NAME': "dfq35olrc",
-        'API_KEY': "345616881523786",
-        'API_SECRET': "nEqlb1ETyvGTIvY4D2zrRKBm-uo",
-    }
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'  # Avoid using Cloudinary for tests
 
     
