@@ -3,7 +3,7 @@
 
 Visit the site [here]()
 
-![responsive multi screen image]()
+![Responsive image](static/images/default.jpg)
 
 ## User Experience (UX)
 ### User Stories 

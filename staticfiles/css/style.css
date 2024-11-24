@@ -1,161 +1,226 @@
+/* General body styling */
 body {
-    background-color: #F9FAFC;
+    background-color: #F4EFE8; /* Warmer, soft cream background for a homely feel */
+    font-family: 'Roboto', sans-serif; /* New main font for a distinct look */
 }
 
+/* Brand text */
 .brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
+    font-family: 'Playfair Display', serif; /* Elegant serif font for brand */
+    font-size: 1.8rem; /* Larger for a unique emphasis */
+    font-weight: 600; /* Slightly lighter for a softer brand presence */
+    color: #5D5347; /* Deep taupe for a grounded, earthy tone */
 }
 
-.red-o {
-    color: #E84610;
-}
-
+/* Text weight adjustments */
 .thin {
     font-weight: 300;
 }
 
+/* Backgrounds */
 .light-bg {
-    background-color: #fff;
+    background-color: #F4EFE8; /* Matching main background for uniformity */
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #6A635C; /* Warm, muted taupe replacing dark tones */
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #F4EFE8; /* Consistent with body background */
 }
 
+/* Card styling */
 .card {
-    border: none;
-    background-color: transparent;
+    border: 1px solid #E0D6D0; /* Soft border for a card-like appearance */
+    background-color: #FFFFFF;
+    border-radius: 8px; /* Adding rounded corners */
+    padding: 15px; /* Added padding for more definition */
 }
 
+/* Image Container styling */
 .image-container {
     position: relative;
+    border-radius: 6px; /* Subtle rounded corners on image containers */
+    overflow: hidden;
 }
 
 .image-flash {
     position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
+    bottom: 10%; /* Higher placement */
+    min-width: 25%; /* Reduced size */
+    left: 5px;
+    background-color: #7D9A76; /* Muted olive green */
+    padding: 5px 8px; /* Added padding */
+    border-radius: 4px; /* Softer, rounded flash label */
 }
 
+/* Image scaling */
 .scale {
-    width: 100%;
+    width: 95%; /* Slightly reduced for spacing */
     height: auto;
 }
 
+/* Author styling */
 .author {
-    color: white;
-    margin: 4px;
+    color: #F4EFE8; /* Soft contrast */
+    margin: 6px;
     text-transform: uppercase;
+    font-size: 0.85rem; /* Smaller font for subtle look */
 }
 
+/* Masthead settings */
 .masthead {
-    margin-top: 10px;
+    margin-top: 20px;
     overflow: hidden;
     position: relative;
-    display: inline-block;
-    height: 33vh;
+    display: block;
+    height: 40vh; /* Increased height for better emphasis */
     width: 100%;
 }
 
 .masthead-text {
-    background-color: #445261;
-    color: white;
+    background-color: #6A635C;
+    color: #F4EFE8;
     position: relative;
+    padding: 15px; /* Added padding for better text emphasis */
+    font-size: 1.2rem; /* Larger, clear font size */
 }
 
 .masthead-image {
     position: relative;
     overflow: hidden;
+    border-radius: 10px; /* Rounding the edges for a different look */
 }
 
 .masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
-    right: 90%;
+    right: 80%; /* Moved further to the right */
     height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
+    width: 160%; /* Adjusted for a larger effect */
+    background: #6A635C;
+    transform: skew(12deg); /* Reduced skew angle */
     z-index: 100;
 }
 
+/* Links */
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #6A635C;
+    font-weight: 500; /* Slightly bolder for clarity */
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #C05A4A; /* Using new terracotta color for hover */
+    text-decoration: underline; /* Underline for added distinction */
 }
 
+/* Post title and subtitle */
 .post-title {
-    margin-top: 10%;
-    margin-left: 5%;
+    margin-top: 15%; /* Increased spacing */
+    margin-left: 4%; /* Slightly adjusted */
+    font-size: 1.5rem; /* Enlarged for more focus */
+    font-family: 'Playfair Display', serif; /* Serif for classic feel */
 }
 
 .post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
+    margin-left: 4%;
+    color: #9D8B80; /* Muted brown for softer contrast */
+    font-size: 1rem; /* Reduced size */
 }
 
+/* Button styling */
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
+    background-color: #7D9A76; /* New olive green for DIY vibe */
     color: #fff;
+    border-radius: 5px; /* Rounded buttons */
+    padding: 8px 12px; /* Slightly increased padding */
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: #F4EFE8;
+    color: #7D9A76;
+    border: 1px solid #7D9A76; /* Border for clear button appearance */
 }
 
 .link {
-    color: #23BBBB;
+    color: #7D9A76; /* Matched to button colors */
     text-decoration: none;
+    font-weight: 500; /* Subtle bold */
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #6A635C;
     text-decoration: underline;
 }
 
+/* Like button */
 .btn-like {
-    color: #E84610;
+    color: #C05A4A; /* Matching to new accent color */
     border: none;
     background: transparent;
+    font-size: 1.1rem; /* Slightly enlarged */
 }
 
 .btn-delete {
     color: #fff;
-    background: #E84610;
+    background: #C05A4A;
+    padding: 6px 10px; /* Refined padding */
+    border-radius: 4px;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
-    background: transparent;
+    color: #C05A4A;
+    background: #FFF0EB; /* Soft background on hover */
     border: none;
 }
 
+/* Faded text color */
 .faded {
-    color: rgb(172, 175, 175);
+    color: #A8998E; /* Muted taupe */
+    font-size: 0.9rem; /* Smaller to deemphasize */
 }
 
+/* Approval text color */
 .approval {
-    color: rgb(222, 146, 168);
+    color: #E3A592; /* Softer peach-pink for approval */
+}
+
+/* Custom styling for Django messages */
+.alert {
+    background-color: white !important; /* Override default Bootstrap background */
+    color: #333;                       /* Set text color */
+    border: 1px solid #ccc;            /* Add a subtle border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    border-radius: 5px;                /* Optional: Rounded corners */
+}
+
+/* Add specific styles for different message tags if needed */
+.alert-success {
+    border-color: #28a745; /* Green border for success messages */
+}
+
+.alert-danger {
+    border-color: #dc3545; /* Red border for error messages */
+}
+
+.alert-info {
+    border-color: #17a2b8; /* Blue border for informational messages */
+}
+
+.alert-warning {
+    border-color: #ffc107; /* Yellow border for warning messages */
+}
+
+.navbar-text {
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
 }
