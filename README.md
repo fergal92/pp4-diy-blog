@@ -124,13 +124,15 @@ The font used is Roboto for body text, providing a clean and modern look. Headin
 ### Wireframes
 Wireframes were created using Blasamiq. First draft wireframes of the different pages as viewed on a laptop
 #### Desktop
-Blog post page![Desktop wireframe 1](static/images/article%20page.png)
-Form page![Desktop wireframe 2](static/images/data%20input.png)
-Form page![Desktop wireframe 3](static/images/home%20page.png)
+Blog post page![Desktop wireframe 1](static/images/article-page.png)
+Form page![Desktop wireframe 2](static/images/data-input.png)
+Home page![Desktop wireframe 3](static/images/home-page.png)
 #### Mobile
-Blog post page![mobile wireframe 1](static/images/mobile%20article%20reading%20page.png)
-Form page![Desktop wireframe 2](static/images/mobile%20data%20input.png)
-Form page![Desktop wireframe 3](static/images/mobile%20home%20page.png)
+Blog post page![mobile wireframe 1](static/images/mobile-article-reading-page.png)
+
+Form page![Desktop wireframe 2](static/images/mobile-data-input.png)
+
+Home page![Desktop wireframe 3](static/images/mobile-home-page.png)
 
 ## Testing
 Please refer to the [TESTING.md](TESTING.md) file for all testing documentation
