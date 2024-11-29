@@ -97,23 +97,26 @@ Provides information about the site owner and a contact form to allow site users
 Provides links to social media channels
 
 ### Features left to implement 
+- Message box on website
+- Search functionality
+- Add categories to blog posts
 #### Search bar 
 To allow searching of blog posts
 
 ## Technologies Used
 - [Django](https://www.djangoproject.com/) - Django framework was used to build this project
 - [Bootstrap](https://getbootstrap.com/) - Bootstrap was used to build the project quickly thanks to the pre configured CSS and JS provided
+- [Python](https://www.python.org/) - Python is the language used to write django and is therefore essential to this project
+- [javascript](https://www.javascript.com/) - Javascript is an essential language used for web development and is used extensively in this project
+- [Bootstrsap](https://getbootstrap.com/) - Bootstrap is used for styling quicly and efficiently in this website
 - [PostgreSQL](https://www.postgresql.org/) - This is the relational database used for the project
 - [Heroku](https://dashboard.heroku.com) - Heroku is the hosting platform used for the project
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - was used as the foundation of the site.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the site.
 - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used to arrange items simmetrically on the pages.
 - [Balsamiq](https://balsamiq.com/) - was used to make wireframes for the website.
-- [VSCode](https://code.visualstudio.com/) - was used as the main tool to write and edit code.
 - [Git](https://git-scm.com/) - was used for the version control of the website.
-- [GitHub](https://github.com/) - was used to host the code of the website.
 - [Am I Responsive](https://ui.dev/amiresponsive) - was used to generate an image of the website across different screen types and resolutions
-- [GitHub Pages](https://pages.github.com/) - was used to host the website
 
 
 ## Design
@@ -173,15 +176,16 @@ The live link to the site can be found here
 
 ### Content
 - The content for this blog was sourced from various DIY websites and personal experiences in home improvement.
-- Content was also produced from prompting chatGPT
+- The learning material produced by code institute has been very high quality and I have learned a lot from it. **CODESTAR** The codestar blog app has heavily influnced this project. As it was the only django project I had seen before and with the complexity of producing a django project for the first time I had to heavily lean on the existing codestar project. A lot of the DIY-Blog project is taken from the codestar project but I have made enough changes to it to create a unique standalone project.
 ### Media
 All images used on the blog are either self-created or sourced from free media platforms such as Unsplash and Pexels.
 
 ## Future improvements
 - Implement search functionality for searching through blog posts
 - Add a profile section for user to add preferences and update a personal profile page
+- Use best practice naming convention in javascript
 ## Acknowledgements
 - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) - My mentor Julia was very supportive during this project. She certainly pushed me to complete a high standard of project especially for the readme and testing sections. I took inspiration from her README.md and TESTING.md files for my own.
 - [Happiness Generator](https://github.com/broken-helix/happiness/) - My first hackathon project. I learned so much from participating in this project and team. We won the March hackathon for 2024 and my team members were a great source of inspiration for me.
 - [freeCodeCamp](https://www.freecodecamp.org/) - I completed the freeCodeCamp responsive web design module before enrolling in code institute and I learned much from that module that I was able to utilise for this project.
-- [CodeInstitute](https://learn.codeinstitute.net/) - The learning material produced by code institute has been very huigh quality and I have learned a lot from it. **CODESTAR** The codestar blog app has heavily influnced this project. As it was the only django project I had seen before and with the complexity of producing a django project for the first time I had to heavily lean on the existing codestar project. A lot of the DIY-Blog project is taken from the codestar project but I have made enough changes to it to create a unique standalone project.
+- [CodeInstitute](https://learn.codeinstitute.net/) - The learning material produced by code institute has been very high quality and I have learned a lot from it. **CODESTAR** The codestar blog app has heavily influnced this project. As it was the only django project I had seen before and with the complexity of producing a django project for the first time I had to heavily lean on the existing codestar project. A lot of the DIY-Blog project is taken from the codestar project but I have made enough changes to it to create a unique standalone project.

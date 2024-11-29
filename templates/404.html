@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="display-1">404</h1>
+        <h2 class="mb-4">Oops! The page you're looking for doesn't exist.</h2>
+        <p class="lead">It looks like nothing was found at this location.</p>
+        <a href="{% url 'home' %}" class="btn btn-primary mt-3">Go Back Home</a>
+    </div>
+</body>
+</html>

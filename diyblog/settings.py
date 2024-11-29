@@ -29,7 +29,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d=wedo8!#=r_3vkzn$7#v#+%ypa8vtv&y@1=0p5=ar4x_8)1-+'
+SECRET_KEY = 'django-insecure-d=wedo8!'
+'#=r_3vkzn$7#v#+%ypa8vtv&y@1=0p5=ar4x_8)1-+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -38,7 +39,6 @@ ALLOWED_HOSTS = [
     '8000-fergal92-pp4diyblog-ib0ogpjczet.ws.codeinstitute-ide.net',
     '.herokuapp.com',
 ]
-
 
 # Application definition
 
@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'blog',
     'about',
-    
 ]
 
 SITE_ID = 1
@@ -112,25 +111,29 @@ DATABASES = {
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
-    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'  # Avoid using Cloudinary for tests
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+    # Avoid using Cloudinary for tests
 
-    
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+        'NumericPasswordValidator',
     },
 ]
 
