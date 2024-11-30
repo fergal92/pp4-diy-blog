@@ -51,6 +51,7 @@ Usability was tested with the below user acceptance testing, sent to new users t
 ### JS Validation:
 
 - No errors or warning messages were found when passing through the official [JSHint](https://www.jshint.com/) validator.
+![Javascript Validation](static/images/js-validation.png)
 
 ### Python Validation:
 

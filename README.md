@@ -152,7 +152,7 @@ The heroku app was deployed at the beginning of the project to ensure any issues
 
 The application has been deployed using Heroku by following these steps:
 
-1. Create the requirements.txt file and run: pip3 freeze > requirements.txt in the console.
+1. Create the requirements.txt file and run: pip3 freeze > requirements.txt in the console for local deployment. Create env.py file with your own details
 2. Commit changes and push them to GitHub.
 3. Go to the Heroku's website.
 4. From the Heroku dashboard, click on "Create new app". New App
@@ -184,6 +184,10 @@ All images used on the blog are either self-created or sourced from free media p
 - Implement search functionality for searching through blog posts
 - Add a profile section for user to add preferences and update a personal profile page
 - Use best practice naming convention in javascript
+
+## Bugs
+All bugs have been resolved
+
 ## Acknowledgements
 - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) - My mentor Julia was very supportive during this project. She certainly pushed me to complete a high standard of project especially for the readme and testing sections. I took inspiration from her README.md and TESTING.md files for my own.
 - [Happiness Generator](https://github.com/broken-helix/happiness/) - My first hackathon project. I learned so much from participating in this project and team. We won the March hackathon for 2024 and my team members were a great source of inspiration for me.
