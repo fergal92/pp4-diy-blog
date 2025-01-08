@@ -17,7 +17,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import dj_database_url
-if os.path.isfile('env.py'):
+if os.path.exists('env.py'):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,14 +29,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d=wedo8!'
-'#=r_3vkzn$7#v#+%ypa8vtv&y@1=0p5=ar4x_8)1-+'
+SECRET_KEY =  os.environ.get('SECRET_KEY',)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-fergal92-pp4diyblog-ib0ogpjczet.ws.codeinstitute-ide.net',
+    '8000-fergal92-pp4diyblog-9ro2frqnmi7.ws.codeinstitute-ide.net',
     '.herokuapp.com',
 ]
 
@@ -164,11 +163,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-fergal92-pp4diyblog-ib0ogpjczet.ws.codeinstitute-ide.net",
+    "https://8000-fergal92-pp4diyblog-9ro2frqnmi7.ws.codeinstitute-ide.net",
     "https://*.herokuapp.com"
 ]
 
 # Cloudinary Configuration
-cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME',)
-api_key = os.getenv('CLOUDINARY_API_KEY',)
-api_secret = os.getenv('CLOUDINARY_API_SECRET',)
+
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
+)
