@@ -224,3 +224,10 @@ body {
     color: #555;
     margin-right: 10px;
 }
+
+/* Optionally, add a scale effect to the icons when hovered */
+.footer a i:hover {
+    color: #ffd700; /* Change to gold on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
