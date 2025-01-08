@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import About
 from .forms import CollaborateForm
@@ -20,6 +20,7 @@ def about_me(request):
                 "Collaboration request received! "
                 "I endeavour to respond within 2 working days."
             )
+            return redirect('about')
     else:
         collaborate_form = CollaborateForm()
 
