@@ -85,17 +85,21 @@ Link to the GitHub project page that was used to manage the website build. Items
 
 #### Navigation Bar
 Users can navigate through the blog sections, such as Home, About, Write blog post, sign up, login, logout.
+![Navbar](static/images/navbar.png)
 #### Commenting System 
 Signed-in users can leave comments on blog posts.
+![Comments](static/images/comments.png)
 #### Admin Panel
 The admin can manage blog posts and comments, approve or reject user submissions.
 #### Blog Post Creation
 Signed-up users can submit DIY blog posts after admin approval.
+![Blog posts](static/images/submit-blog-post.png)
 #### About section
 Provides information about the site owner and a contact form to allow site users to communicate with the site owner
+![About](static/images/about.png)
 #### Footer
 Provides links to social media channels
-
+![Footer](static/images/footer.png)
 ### Features left to implement 
 - Message box on website
 - Search functionality
@@ -155,10 +159,12 @@ The application has been deployed using Heroku by following these steps:
 1. Create the requirements.txt file and run: pip3 freeze > requirements.txt in the console for local deployment. Create env.py file with your own details
 2. Commit changes and push them to GitHub.
 3. Go to the Heroku's website.
+![Heroku](static/images/heroku.png)
 4. From the Heroku dashboard, click on "Create new app". New App
 5. Enter the "App name" and "Choose a region" before clicking on "Create app".
 6. Go to "Config Vars" under the "Settings" tab.
 7. Click on "Reveals Config Vars" and add the KEY: CREDS and the VALUE stored in creds.json file if needed. Config Vars
+![Config Vars](static/images/config-vars.png)
 8. Add the Config Var, KEY: PORT and VALUE: 8000.
 9. Go to "Buildpacks" section and click "Add buildpack". Buildpacks
 10. Select "python" and click "Save changes"
@@ -167,6 +173,7 @@ Add "nodejs" buildpack as well using the same process.
 12. Go to "Connect to GitHub" section and "Search" the repository to be deployed.
 Click "Connect" next the repository name.
 13. Choose "Manual deploys" to deploy your application. Manual Deployment
+![Manual deployment](static/images/deployment.png)
 14. Apply for student credits and then apply ECO Dynos. EcoDynos
 15. Manually deploy the project in Heroku once changes have been made to the repository
 The live link to the site can be found here
@@ -187,6 +194,9 @@ All images used on the blog are either self-created or sourced from free media p
 
 ## Bugs
 All bugs have been resolved
+
+- A major bug was that the secret key had been left visible after the project was submitted. This has been resolved by hiding the env.py file so that it is not visible.
+
 
 ## Acknowledgements
 - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) - My mentor Julia was very supportive during this project. She certainly pushed me to complete a high standard of project especially for the readme and testing sections. I took inspiration from her README.md and TESTING.md files for my own.
