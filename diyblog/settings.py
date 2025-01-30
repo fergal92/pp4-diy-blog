@@ -36,7 +36,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-fergal92-pp4diyblog-9ro2frqnmi7.ws.codeinstitute-ide.net',
-    '.herokuapp.com',
+    '.herokuapp.com', '127.0.0.1',
 ]
 
 # Application definition
@@ -163,7 +163,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-fergal92-pp4diyblog-9ro2frqnmi7.ws.codeinstitute-ide.net",
+    "https://localhost",
     "https://*.herokuapp.com"
 ]
 
